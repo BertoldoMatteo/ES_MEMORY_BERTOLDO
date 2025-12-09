@@ -66,8 +66,8 @@ function indovina(pos){
             const buttons = document.querySelectorAll("button");
             buttons.forEach(btn => btn.disabled = true);
             setTimeout(() => {
-                correct(pos1, ind1);
                 buttons.forEach(btn => btn.disabled = false);
+                correct(pos1, ind1);
             }, 2000);
             document.getElementById("risp").innerHTML = "hai indovinato";
         } else {
