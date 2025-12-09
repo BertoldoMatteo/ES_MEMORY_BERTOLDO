@@ -63,8 +63,11 @@ function indovina(pos){
         let v = (pos % 2 == 0) ? 1 : -1;
         ind1 = document.getElementById(ind);
         if(pos + v == ind){
+            const buttons = document.querySelectorAll("button");
+            buttons.forEach(btn => btn.disabled = true);
             setTimeout(() => {
                 correct(pos1, ind1);
+                buttons.forEach(btn => btn.disabled = false);
             }, 2000);
             document.getElementById("risp").innerHTML = "hai indovinato";
         } else {
